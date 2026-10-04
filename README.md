@@ -536,4 +536,9 @@ https://github.com/kumarina-max/vector-role
 https://github.com/kumarina-max/lighthouse-role
 ```
 
-Репозиторий самого playbook будет опубликован отдельно после завершения проверки задания.
+**Playbook:**
+
+```text
+https://github.com/kumarina-max/ansible-roles-playbook
+```
+
