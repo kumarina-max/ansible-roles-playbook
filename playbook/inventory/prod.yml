@@ -3,7 +3,28 @@
     hosts:
       centos7:
         ansible_connection: docker
+
   deb:
     hosts:
       ubuntu:
+        ansible_connection: docker
+
+  local:
+    hosts:
+      localhost:
+        ansible_connection: local
+
+  clickhouse:
+    hosts:
+      ubuntu-systemd:
+        ansible_connection: docker
+
+  vector:
+    hosts:
+      ubuntu-systemd:
+        ansible_connection: docker
+
+  lighthouse:
+    hosts:
+      ubuntu-systemd:
         ansible_connection: docker

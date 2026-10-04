@@ -1,0 +1,23 @@
+# Ansible
+*.retry
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Ansible Vault
+*.vault
+vault-password-file
+
+# Local environment
+.env
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

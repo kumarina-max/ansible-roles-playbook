@@ -1,0 +1,8 @@
+---
+- name: Test Vector role
+  hosts: localhost
+  connection: local
+  become: true
+
+  roles:
+    - vector-role

@@ -1,0 +1,7 @@
+---
+vector_package_name: "vector"
+
+vector_config_dir: "/etc/vector"
+vector_config_file: "/etc/vector/vector.yaml"
+
+vector_service_name: "vector"

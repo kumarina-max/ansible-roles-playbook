@@ -1,0 +1,13 @@
+---
+vector_architecture_map:
+  x86_64: "amd64"
+  aarch64: "arm64"
+  armv7l: "armhf"
+
+vector_package_architecture: "{{ vector_architecture_map[ansible_architecture] }}"
+
+vector_apt_repository: "deb [arch={{ vector_package_architecture }} signed-by={{ vector_apt_keyring }}] https://apt.vector.dev/ stable vector-0"
+
+vector_apt_key_url: "https://keys.datadoghq.com/DATADOG_APT_KEY_CURRENT.public"
+
+vector_apt_keyring: "/usr/share/keyrings/vector.gpg"
