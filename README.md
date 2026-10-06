@@ -13,107 +13,7 @@
 
 ---
 
-# Задание 1. Введение в Ansible
-
-## Основная часть
-
-### 1. Запуск playbook на `test.yml`
-
-При запуске playbook на окружении из `test.yml` значение переменной `some_fact` определялось из файла:
-
-```text
-playbook/group_vars/all/examp.yml
-```
-
-Исходное значение переменной было изменено на:
-
-```yaml
-some_fact: "all default fact"
-```
-
----
-
-### 2. Проверка значения `some_fact`
-
-После изменения переменной playbook выводит:
-
-```text
-all default fact
-```
-
----
-
-### 3. Запуск playbook на `prod.yml`
-
-Для проверки использовалось окружение Docker.
-
-В inventory определены группы:
-
-* `el` — CentOS;
-* `deb` — Ubuntu;
-* `local` — localhost.
-
----
-
-### 4. Переменные для групп `deb` и `el`
-
-Для групп были заданы следующие значения:
-
-```text
-deb default fact
-el default fact
-```
-
-Переменные находятся в:
-
-```text
-playbook/group_vars/deb/examp.yml
-playbook/group_vars/el/examp.yml
-```
-
----
-
-### 5. Шифрование переменных с помощью Ansible Vault
-
-Файлы:
-
-```text
-playbook/group_vars/deb/examp.yml
-playbook/group_vars/el/examp.yml
-```
-
-зашифрованы с помощью `ansible-vault`.
-
-Для задания использовался пароль:
-
-```text
-netology
-```
-
-Проверка выполняется командой:
-
-```bash
-ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pass
-```
-
----
-
-### 6. Группа `local`
-
-В inventory добавлена группа:
-
-```yaml
-local:
-  hosts:
-    localhost:
-      ansible_connection: local
-```
-
-Это позволяет выполнять Ansible-задачи непосредственно на control node.
-
----
-
-# Задание 4 Работа с roles
+# Задание 4. Работа с roles
 
 ## Структура проекта
 
@@ -506,10 +406,6 @@ changed=0
 
 В рамках работы:
 
-* выполнено первое задание по Ansible;
-* настроены переменные `group_vars`;
-* переменные для групп `deb` и `el` зашифрованы с помощью Ansible Vault;
-* добавлена группа `local`;
 * playbook переработан с использованием Ansible Roles;
 * подключена готовая роль ClickHouse версии `1.13`;
 * создана собственная роль Vector;
